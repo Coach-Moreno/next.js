@@ -75,7 +75,7 @@ impl ModuleOptions {
         } = *module_options_context.await?;
 
         if !rules.is_empty() {
-            let path_value = path.await?;
+            let path_value = path.clone();
 
             for (condition, new_context) in rules.iter() {
                 if condition.matches(&path_value).await? {
@@ -471,7 +471,8 @@ impl ModuleOptions {
                 } else {
                     package_import_map_from_context(
                         "postcss".into(),
-                        path.context("need_path in ModuleOptions::new is incorrect")?,
+                        path.clone()
+                            .context("need_path in ModuleOptions::new is incorrect")?,
                     )
                 };
 
@@ -652,7 +653,7 @@ impl ModuleOptions {
 
                             match &condition.path {
                                 ConditionPath::Glob(glob) => RuleCondition::ResourcePathGlob {
-                                    base: execution_context.project_path().await?,
+                                    base: execution_context.project_path().await?.clone_value(),
                                     glob: Glob::new(glob.clone()).await?,
                                 },
                                 ConditionPath::Regex(regex) => {
@@ -661,7 +662,7 @@ impl ModuleOptions {
                             }
                         } else if key.contains('/') {
                             RuleCondition::ResourcePathGlob {
-                                base: execution_context.project_path().await?,
+                                base: execution_context.project_path().await?.clone_value(),
                                 glob: Glob::new(key.clone()).await?,
                             }
                         } else {
