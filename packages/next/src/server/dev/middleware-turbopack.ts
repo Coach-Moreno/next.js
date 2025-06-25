@@ -333,6 +333,8 @@ async function nativeTraceSource(
   return undefined
 }
 
+// mark: relevant fn for source maps
+// todo: need to do for webpack as well
 async function createOriginalStackFrame(
   project: Project,
   projectPath: string,
@@ -537,6 +539,8 @@ export async function getOriginalStackFrames({
           projectPath,
           frame
         )
+        stackFrame?.originalCodeFrame
+        stackFrame?.originalStackFrame
         if (stackFrame === null) {
           return {
             status: 'rejected',
