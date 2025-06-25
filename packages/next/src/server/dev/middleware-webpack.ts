@@ -356,7 +356,7 @@ async function getSource(
   return undefined
 }
 
-function getOriginalStackFrames({
+export function getOriginalStackFrames({
   isServer,
   isEdgeServer,
   isAppDirectory,

@@ -711,5 +711,14 @@
   "710": "Unable to remove an invalidated webpack cache. If this issue persists you can work around it by deleting %s",
   "711": "Can't resolve %s",
   "712": "`rspack.warnForEdgeRuntime` is not supported by the wasm bindings.",
-  "713": "Unexpected error during process lookup"
+  "713": "Unexpected error during process lookup",
+  "714": "The \"%s\" argument must be of type number",
+  "715": "The \"strict\" argument must be of type boolean",
+  "716": "Converting circular structure to JSON",
+  "717": "The \"%s\" argument must be of type boolean",
+  "718": "The \"%s\" argument must be >= 1",
+  "719": "The \"%s\" argument must be an integer",
+  "720": "The \"circularValue\" argument must be of type string or the value null or undefined",
+  "721": "The \"deterministic\" argument must be of type boolean or comparator function",
+  "722": "Invariant"
 }
