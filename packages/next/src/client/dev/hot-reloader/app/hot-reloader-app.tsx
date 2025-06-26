@@ -454,7 +454,6 @@ export default function HotReload({
   children: ReactNode
   globalError: [GlobalErrorComponent, React.ReactNode]
 }) {
-  console.log('hot reload')
 
   // oh something something
   useErrorHandler(dispatcher.onUnhandledError, dispatcher.onUnhandledRejection)
