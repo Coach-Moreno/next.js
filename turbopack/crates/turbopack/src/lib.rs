@@ -606,7 +606,7 @@ async fn process_default_internal(
                                          Ecmascript transforms"
                                     ))
                                     .resolved_cell(),
-                                    source: Some(IssueSource::from_source_only(source)),
+                                    source: Some(IssueSource::from_source_only(current_source)),
                                 }
                                 .resolved_cell()
                                 .emit();
@@ -622,7 +622,7 @@ async fn process_default_internal(
                                          Ecmascript transforms"
                                     ))
                                     .resolved_cell(),
-                                    source: Some(IssueSource::from_source_only(source)),
+                                    source: Some(IssueSource::from_source_only(current_source)),
                                 }
                                 .resolved_cell()
                                 .emit();

@@ -273,13 +273,14 @@ pub fn format_issue(
     }
 
     let severity = severity.style(severity_to_style(severity));
-    write!(issue_text, "{severity} - [{stage}]").unwrap();
+    write!(issue_text, "{severity} - [{stage}] ").unwrap();
     for (index, line) in styled_issue.lines().enumerate() {
         // don't indent the first line
         if index > 0 {
             issue_text.push_str("  ");
         }
         issue_text.push_str(line);
+        issue_text.push('\n');
     }
 
     issue_text

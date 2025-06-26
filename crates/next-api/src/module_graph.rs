@@ -482,8 +482,8 @@ impl Issue for CssGlobalImportIssue {
     }
 
     fn source(&self) -> Option<&IssueSource> {
-        // TODO: This should have a detailed source location associated so we can display a better
-        // error message.
+        // TODO(PACK-4879): This should have a detailed source location associated so we can display
+        // a better error message.
         None
     }
 }
