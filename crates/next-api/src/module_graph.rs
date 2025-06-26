@@ -21,7 +21,9 @@ use turbo_tasks_fs::FileSystemPath;
 use turbopack::css::{CssModuleAsset, ModuleCssAsset};
 use turbopack_core::{
     context::AssetContext,
-    issue::{Issue, IssueExt, IssueSeverity, IssueStage, OptionStyledString, StyledString},
+    issue::{
+        Issue, IssueExt, IssueSeverity, IssueSource, IssueStage, OptionStyledString, StyledString,
+    },
     module::Module,
     module_graph::{GraphTraversalAction, ModuleGraph, SingleModuleGraph},
 };
@@ -477,6 +479,12 @@ impl Issue for CssGlobalImportIssue {
     #[turbo_tasks::function]
     fn stage(&self) -> Vc<IssueStage> {
         IssueStage::ProcessModule.into()
+    }
+
+    fn source(&self) -> Option<&IssueSource> {
+        // TODO: This should have a detailed source location associated so we can display a better
+        // error message.
+        None
     }
 }
 

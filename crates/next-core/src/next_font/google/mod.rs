@@ -19,7 +19,7 @@ use turbopack::evaluate_context::node_evaluate_asset_context;
 use turbopack_core::{
     asset::AssetContent,
     context::AssetContext,
-    ident::{AssetIdent, Layer},
+    ident::Layer,
     issue::{IssueExt, IssueSeverity, StyledString},
     reference_type::{InnerAssets, ReferenceType},
     resolve::{

@@ -1383,7 +1383,7 @@ pub(crate) async fn analyse_ecmascript_module_internal(
                                             EsmAssetReference::new(
                                                 original_reference.origin,
                                                 original_reference.request,
-                                                original_reference.issue_source.clone(),
+                                                original_reference.issue_source,
                                                 original_reference.annotations.clone(),
                                                 Some(ModulePart::export(export.clone())),
                                                 original_reference.import_externals,
